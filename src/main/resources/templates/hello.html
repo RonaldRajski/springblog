@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+Replace <br>
+    <nav th:replace="fragments/navbar :: mainNav('Wed')">
+
+    </nav>
+
+    Include <br>
+
+    <div th:include="fragments/navbar :: mainNav('Tuesday')" >
+
+
+    </div>
+
+    <h2>List of Students</h2>
+
+    <ol>
+        <li th:each="aName : ${nameList}" th:text="${aName}"></li>
+    </ol>
+
+    <h1>Hello, <span th:text="${aName}">ANAME</span> </h1>
+
+</body>
+</html>
