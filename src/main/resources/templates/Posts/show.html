@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"   lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    how to place a navbar
+    <nav th:replace="partials/navbar :: navbar"></nav>
+
+    <div class="container">
+        <h1>Here is a single post</h1>
+
+        <h3 th:text="${post.title}"></h3>
+        <p th:text="'Authored by ' + ${post.user.email}"></p>
+        <p th:text=""></p>
+
+
+
+    </div>
+
+</body>
+</html>

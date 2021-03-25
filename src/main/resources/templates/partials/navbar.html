@@ -6,8 +6,9 @@
 </head>
     <body>
 
-        <nav th:fragment="mainNav(day)" class="nav navbar">
+        <nav th:fragment="mainNav(day)" class="nav navbar">text
             <ul>
+                <!--/*@thymesVar id="admin" type="text"*/-->
                 <li th:if="${admin}">a href="/grades">Grades</li>
                 <li><a href="#">Quizzes</a></li>
                 <li><a href="#" th:text="${day}"></a></li>

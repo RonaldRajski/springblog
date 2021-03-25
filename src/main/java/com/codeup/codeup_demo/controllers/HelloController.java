@@ -16,22 +16,22 @@ import java.util.List;
 @Controller
 public class HelloController {
 
-    @GetMapping("/hello/{name}")
-    public String sayHello(@PathVariable String name, Model model){
-
-        List<String> names = new ArrayList<>();
-
-        names.add("Sam");
-        names.add("Dorian");
-        names.add("Diego");
-
-        model.addAttribute("aName", name.toUpperCase());
-        model.addAttribute("admin", name.equals("fer"));
-        model.addAttribute("nameList", names);
-
-        return "hello";
-
-    }
+//    @GetMapping("/hello/{name}")
+//    public String sayHello(@PathVariable String name, Model model){
+//
+//        List<String> names = new ArrayList<>();
+//
+//        names.add("Sam");
+//        names.add("Dorian");
+//        names.add("Diego");
+//
+//        model.addAttribute("aName", name.toUpperCase());
+//        model.addAttribute("admin", name.equals("fer"));
+//        model.addAttribute("nameList", names);
+//
+//        return "hello";
+//
+//    }
 
     @GetMapping("/join")
     public String renderForm() {
@@ -46,13 +46,6 @@ public class HelloController {
         return "join";
 
     }
-
-
-
-
-
-
-
 
 
 
