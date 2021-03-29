@@ -1,14 +1,14 @@
 package com.codeup.codeup_demo.controllers;
 
-public class AdController {
-    import com.codeup.codeup_demo.models.Ad;
-import com.codeup.codeup_demo.models.Post;
-import com.codeup.codeup_demo.AdRepository;
+import com.codeup.codeup_demo.models.Ad;
+import com.codeup.codeup_demo.repo.AdRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+
 
 
     @Controller
@@ -84,4 +84,4 @@ import java.util.List;
 
     }
 
-}
+

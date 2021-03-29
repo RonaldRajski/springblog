@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: main-head('create ad')"></head>
+
 <body>
+
+<form action="/ads/create" method="post">
+
+    <h2>Create Ad Form</h2>
+
+    <br>
+
+    <label for="title">Title</label>
+    <input name="ad_title" id="title" type="text">
+
+    <br>
+
+    <label for="description">Description</label>
+    <input name="ad_description" id="description" type="text">
+
+    <br>
+
+    <input type="submit" value="create ad">
+
+</form>
 
 </body>
 </html>

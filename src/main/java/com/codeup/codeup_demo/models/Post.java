@@ -95,7 +95,7 @@ public class Post {
     //
     private SimpleDateFormat sdf = new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");
 
-    public Post(){};
+    public Post(String title, String body){};
 
 
 

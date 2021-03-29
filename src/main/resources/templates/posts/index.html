@@ -3,16 +3,12 @@
 <head th:replace="fragments/header :: main-head('All the Posts')"></head>
 <body>
 
-Show a list of posts
 <main class="container">
-    <div class="post" th:each="post : ${posts}">
+    <div class="post" th:each="ad : ${posts}">
         <h1 th:text="${post.title}"></h1>
         <p th:text="${post.body}"></p>
     </div>
 </main>
-<div>
-    <footer th:replace="posts/footer :: footer"></footer>
-</div>
 
 </body>
 </html>
