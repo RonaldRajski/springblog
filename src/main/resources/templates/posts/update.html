@@ -4,6 +4,8 @@
 
 <body>
 
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
 <form th:action="${'/posts/'+ oldPost.id +'/update'}" method="post">
 
     <h2>Create Post Form</h2>
@@ -16,7 +18,7 @@
     <br>
 
     <label for="body">body</label>
-    <input name="post_bopdy" id="body" type="text" th:value="${oldPost.body}">
+    <input name="post_body" id="body" type="text" th:value="${oldPost.body}">
 
     <br>
 

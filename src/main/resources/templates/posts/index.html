@@ -3,12 +3,19 @@
 <head th:replace="fragments/header :: main-head('All the Posts')"></head>
 <body>
 
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
 <main class="container">
-    <div class="post" th:each="ad : ${posts}">
+    <div class="post" th:each="post : ${posts}">
         <h1 th:text="${post.title}"></h1>
-        <p th:text="${post.body}"></p>
+        <p th:text="${post.body}
+"></p>
     </div>
 </main>
+
+<footer th:replace="fragments/footer :: footer" >
+
+</footer>
 
 </body>
 </html>

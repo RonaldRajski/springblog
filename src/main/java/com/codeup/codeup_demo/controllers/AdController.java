@@ -23,8 +23,8 @@ import java.util.List;
 
         @GetMapping("/ads")
         public String seeAllAds(Model viewModel){
-            List<Ad> adsFromDB = adDao.findAll();
-            viewModel.addAttribute("ads", adsFromDB);
+            List<Ad> adsFromdb = adDao.findAll();
+            viewModel.addAttribute("ads", adsFromdb);
             // do not use a / to reference a template
             return "ads/index";
         }
@@ -55,9 +55,9 @@ import java.util.List;
         @GetMapping("/ads/{id}/update")
         public String updateAdForm(@PathVariable Long id, Model model){
 
-            Ad adFromDb = adDao.getOne(id);
+            Ad adFromdb = adDao.getOne(id);
 
-            model.addAttribute("oldAd",adFromDb);
+            model.addAttribute("oldAd",adFromdb);
 
             return "ads/update";
         }

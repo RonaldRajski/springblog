@@ -3,10 +3,13 @@
 <head th:replace="fragments/header :: main-head('delete post')"></head>
 <body>
 
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
 <main class="container">
     <div class="post">
         <h1 th:text="${post.title}"></h1>
         <p th:text="${post.body}"></p>
+        <p>You can contact me at <span th:text="${post.owner.email}"></span></p>
     </div>
 
     <form th:action="${'/posts/'+ post.id +'/delete'}" method="POST">

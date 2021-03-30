@@ -2,7 +2,6 @@ package com.codeup.codeup_demo.models;
 
 import javax.persistence.*;
 
-
 @Entity
 public class Image {
 
@@ -17,8 +16,7 @@ public class Image {
     @JoinColumn(name = "ad_id")
     private Ad ad;
 
-    public Image(){
-
+    public Image() {
     }
 
     public Long getId() {
