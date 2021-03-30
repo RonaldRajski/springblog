@@ -1,69 +1,6 @@
 package com.codeup.codeup_demo.models;
 
-//import javax.persistence.*;
-//
-//
-//@Entity
-//@Table(name ="posts" )
-//public class Post {
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
-//
-//    @Column(length = 225, nullable = false)
-//    private String title;
-//
-//    @Column(columnDefinition = "TEXT", length = 3000, nullable = false)
-//    private String body;
-//
-//
-////    public User getUser() {
-////        return user;
-////    }
-////
-////    public void setUser(User user) {
-////        this.user = user;
-////    }
-////
-////
-////
-////    @ManyToOne
-////    private User user;
-//
-//    public Post() {
-//    }
-//
-//    public Post(String title, String body) {
-//        this.title = title;
-//        this.body = body;
-//        this.id = id;
-//    }
-//
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(long id) {
-//        this.id = id;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getBody() {
-//        return body;
-//    }
-//
-//    public void setBody(String body) {
-//        this.body = body;
-//    }
-//}
+
 
 import com.mysql.cj.protocol.ColumnDefinition;
 
@@ -71,6 +8,7 @@ import javax.persistence.*;
 import javax.xml.crypto.Data;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -84,6 +22,25 @@ public class Post {
     @Column (columnDefinition = "TEXT", nullable = false)
     private String body;
 
+    @OneToOne
+    private User owner;
+
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "ad")
+    private List<Image> images;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "ads_categories",
+            joinColumns = {@JoinColumn(name = "ad_id")},
+            inverseJoinColumns={@JoinColumn(name="cat_id")}
+    )
+    private List<Category> categories;
+
+
+
+
+
     //    @Column (columnDefinition="created_time datetime default CURRENT_TIMESTAMP null")
 //    @Column
     private Date created_on;
@@ -94,6 +51,10 @@ public class Post {
     private String modified_on_string;
     //
     private SimpleDateFormat sdf = new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");
+
+    public Post(){
+
+    }
 
     public Post(String title, String body){};
 
