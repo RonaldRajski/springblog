@@ -2,45 +2,76 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: main-head('create post')"></head>
 
+
+
+
+
+    <th:block th:if="${post.id == null}">
+        <head th:replace="fragments/header :: main-head('create post')"></head>
+    </th:block>
+
+
+    <th:block th:unless="${post.id == null}">
+        <head th:replace="fragments/header :: main-head('edit post')"></head>
+    </th:block>
+
 <body>
 
-<nav th:replace="fragments/navbar :: navbar"></nav>
 
-<form action="/posts/create" method="post">
+<!--<nav th:replace="fragments/navbar :: navbar"></nav>-->
 
-    <h2>Create Your Post</h2>
 
-    <br>
 
-    <label for="title">Title</label>
-    <input name="post_title" id="title" type="text" placeholder="Title">
+<th:block th:if="${post.id == null}">
 
-    <br>
+    <form th:action="@{/posts/create}" method="post" th:object="${post}">
 
-    <label for="body">Description</label>
-    <input name="post_body" id="body" type="text" placeholder="Body">
+        <h2>Create Post Form</h2>
 
-    <br>
+        <br>
 
-    <input type="submit" value="Create post">
+        <label >Title</label>
+        <input th:field="*{title}" type="text">
 
-</form>
+        <br>
 
-<!--<div class="container">-->
-<!--    <form action="/posts/create" method="post">-->
+        <label>body</label>
+        <input th:field="*{body}" type="text">
 
-<!--        <h2>Create your post here:</h2>-->
-<!--        <br>-->
-<!--        <div class="form-group">-->
-<!--            <label for="title">Title</label>-->
-<!--            <input name="post_title" class="form-control" id="title" placeholder="Title" type="text">-->
-<!--        </div>-->
-<!--        <div class="form-group">-->
-<!--            <label for="body">Body</label>-->
-<!--            <textarea name="post_body" class="form-control" id="body" placeholder="Body" rows="3"></textarea>-->
-<!--        </div>-->
-<!--        <button type="submit" class="btn btn-success">Create</button>-->
-<!--    </form>-->
+        <br>
+
+        <input type="submit" value="create post">
+
+    </form>
+
+</th:block>
+
+<th:block th:unless="${post.id == null}">
+
+    <form th:action="@{'/posts/'+ ${post.id} +'/edit'}" method="post" th:object="${post}">
+
+        <h2>Edit Post Form</h2>
+
+        <br>
+
+        <label>Title</label>
+        <input th:field="*{title}" type="text">
+
+        <br>
+
+        <label>body</label>
+        <input th:field="*{body}" type="text">
+
+        <br>
+
+        <input type="submit" value="create post">
+
+    </form>
+
+</th:block>
+
+
 
 </body>
 </html>
+

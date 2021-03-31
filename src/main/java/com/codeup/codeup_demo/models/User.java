@@ -1,5 +1,7 @@
 package com.codeup.codeup_demo.models;
 
+
+//
 //import javax.persistence.*;
 //import java.util.List;
 //
@@ -10,23 +12,7 @@ package com.codeup.codeup_demo.models;
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Long id;
 //
-//    public String getUsername() {
-//        return username;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-//
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
-//
-//    @Column(name="username")
+//    @Column(name = "username")
 //    private String username;
 //
 //    @Column(name = "first_name")
@@ -35,7 +21,7 @@ package com.codeup.codeup_demo.models;
 //    @Column(name = "last_name")
 //    private String lastName;
 //
-//    @Column(name="email")
+//    @Column(name = "email")
 //    private String email;
 //
 //    @Column(name = "password")
@@ -44,16 +30,7 @@ package com.codeup.codeup_demo.models;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 //    private List<Post> posts;
 //
-//    public List<Post> getPosts() {
-//        return posts;
-//    }
-//
-//    public void setPosts(List<Post> posts) {
-//        this.posts = posts;
-//    }
-//
-//    public User(){
-//
+//    public User() {
 //    }
 //
 //    public User(String firstName, String lastName, String email) {
@@ -99,6 +76,30 @@ package com.codeup.codeup_demo.models;
 //
 //    public void setEmail(String email) {
 //        this.email = email;
+//    }
+//
+//    public String getUsername() {
+//        return username;
+//    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
+//
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
+//
+//    public List<Post> getPosts() {
+//        return posts;
+//    }
+//
+//    public void setPosts(List<Post> posts) {
+//        this.posts = posts;
 //    }
 //}
 

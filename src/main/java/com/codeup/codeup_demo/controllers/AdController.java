@@ -1,7 +1,9 @@
 package com.codeup.codeup_demo.controllers;
 
 import com.codeup.codeup_demo.models.Ad;
+import com.codeup.codeup_demo.models.User;
 import com.codeup.codeup_demo.repo.AdRepository;
+import com.codeup.codeup_demo.repo.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +17,13 @@ import java.util.List;
     public class AdController {
 
         private final AdRepository adDao;
+        private final UserRepository userDao;
 
-        AdController(AdRepository adDao){
+        AdController(AdRepository adDao, UserRepository userDao){
             this.adDao = adDao;
+            this.userDao = userDao;
         }
+
 
 
         @GetMapping("/ads")
@@ -36,18 +41,20 @@ import java.util.List;
         }
 
         @GetMapping("/ads/create")
-        public String viewAdForm(){
+        public String viewAdForm(Model model){
+            model.addAttribute("ad", new Ad());
             return "ads/create";
         }
 
         @PostMapping("/ads/create")
         @ResponseBody
-        public String createAd(@RequestParam("ad_title") String title, @RequestParam("ad_description") String description){
+        public String createAd(@ModelAttribute Ad ad){
 
-            Ad adToSave = new Ad(title,description);
+            User user = userDao.getOne(1L);
 
-            adDao.save(adToSave);
+            ad.setOwner(user);
 
+            adDao.save(ad);
 
             return "You created an ad.";
         }

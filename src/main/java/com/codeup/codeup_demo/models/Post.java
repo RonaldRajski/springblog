@@ -165,12 +165,16 @@ public class Post {
     @JoinColumn(name = "user_id")
     private User owner;
 
-    public Post() {
+    public Post(Long id, String title, String body) {
     }
 
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+    }
+
+    public Post() {
+
     }
 
     public Long getId() {
