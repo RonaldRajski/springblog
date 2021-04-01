@@ -1,4 +1,4 @@
-package com.codeup.codeup_demo.models;
+package com.codeup.springblog.models;
 
 
 //

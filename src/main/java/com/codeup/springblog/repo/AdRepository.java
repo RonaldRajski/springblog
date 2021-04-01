@@ -1,6 +1,6 @@
-package com.codeup.codeup_demo.repo;
+package com.codeup.springblog.repo;
 
-import com.codeup.codeup_demo.models.Ad;
+import com.codeup.springblog.models.Ad;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AdRepository extends JpaRepository<Ad, Long> {

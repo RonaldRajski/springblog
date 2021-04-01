@@ -1,8 +1,8 @@
-package com.codeup.codeup_demo.repo;
+package com.codeup.springblog.repo;
 
 
 
-import com.codeup.codeup_demo.models.User;
+import com.codeup.springblog.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

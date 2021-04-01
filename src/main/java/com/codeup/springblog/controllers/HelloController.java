@@ -1,4 +1,4 @@
-package com.codeup.codeup_demo.controllers;
+package com.codeup.springblog.controllers;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Controller

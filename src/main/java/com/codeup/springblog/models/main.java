@@ -1,4 +1,4 @@
-package com.codeup.codeup_demo.models;
+package com.codeup.springblog.models;
 
 public class main {
     public static void main(String[] args) {
