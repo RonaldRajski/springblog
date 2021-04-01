@@ -1,30 +1,32 @@
 package com.codeup.codeup_demo.controllers;
 
 import com.codeup.codeup_demo.models.Ad;
+import com.codeup.codeup_demo.models.Post;
 import com.codeup.codeup_demo.models.User;
 import com.codeup.codeup_demo.repo.AdRepository;
 import com.codeup.codeup_demo.repo.UserRepository;
+import com.codeup.codeup_demo.services.EmailService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
-
-
-    @Controller
+@Controller
     public class AdController {
+
+        @Autowired
+        private EmailService emailService;
 
         private final AdRepository adDao;
         private final UserRepository userDao;
 
-        AdController(AdRepository adDao, UserRepository userDao){
+
+    AdController(AdRepository adDao, UserRepository userDao){
             this.adDao = adDao;
             this.userDao = userDao;
         }
-
-
 
         @GetMapping("/ads")
         public String seeAllAds(Model viewModel){
@@ -51,10 +53,9 @@ import java.util.List;
         public String createAd(@ModelAttribute Ad ad){
 
             User user = userDao.getOne(1L);
-
             ad.setOwner(user);
-
-            adDao.save(ad);
+            Ad savedAd = adDao.save(ad);
+            emailService.prepareAndSend(savedAd, "New Ad!", "A new Ad has been created in the app");
 
             return "You created an ad.";
         }
