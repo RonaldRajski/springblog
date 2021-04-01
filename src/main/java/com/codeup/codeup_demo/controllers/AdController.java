@@ -1,10 +1,10 @@
-package com.codeup.springblog.controllers;
+package com.codeup.codeup_demo.controllers;
 
-import com.codeup.springblog.models.Ad;
-import com.codeup.springblog.models.User;
-import com.codeup.springblog.repo.AdRepository;
-import com.codeup.springblog.repo.UserRepository;
-import com.codeup.springblog.services.EmailService;
+import com.codeup.codeup_demo.models.Ad;
+import com.codeup.codeup_demo.models.User;
+import com.codeup.codeup_demo.repo.AdRepository;
+import com.codeup.codeup_demo.repo.UserRepository;
+import com.codeup.codeup_demo.services.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.codeup.springblog.models;
+package com.codeup.codeup_demo.models;
 
 import javax.persistence.*;
 
@@ -20,16 +20,12 @@ public class Post {
     @JoinColumn(name = "user_id")
     private User owner;
 
-    public Post(Long id, String title, String body) {
+    public Post() {
     }
 
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
-    }
-
-    public Post() {
-
     }
 
     public Long getId() {
@@ -63,9 +59,5 @@ public class Post {
     public void setOwner(User owner) {
         this.owner = owner;
     }
-
-    public User getAuthor(){return author;}
-
-    public void setAuthor(User author) {
-    }
 }
+

@@ -1,8 +1,8 @@
-package com.codeup.springblog;
+package com.codeup.codeup_demo;
 
 
 
-import com.codeup.springblog.services.UserDetailsLoader;
+import com.codeup.codeup_demo.services.UserDetailsLoader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

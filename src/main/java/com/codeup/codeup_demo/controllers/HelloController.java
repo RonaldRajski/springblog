@@ -1,4 +1,4 @@
-package com.codeup.springblog.controllers;
+package com.codeup.codeup_demo.controllers;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
