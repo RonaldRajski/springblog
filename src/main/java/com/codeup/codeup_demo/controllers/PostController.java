@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,8 +27,8 @@ public class PostController {
 
     @GetMapping("/posts")
     public String seeAllPosts(Model viewModel){
-        List<Post> postsFromDB = postDao.findAll();
-        viewModel.addAttribute("posts", postsFromDB);
+        List<Post> postsFromdb = postDao.findAll();
+        viewModel.addAttribute("posts", postsFromdb);
         // do not use a / to reference a template
         return "posts/index";
     }
