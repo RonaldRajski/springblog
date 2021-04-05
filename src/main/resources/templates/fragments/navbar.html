@@ -7,20 +7,11 @@
 </head>
     <body>
 
-<!--        <nav th:fragment="mainNav(day)" class="nav navbar">-->
-<!--            <ul>-->
-<!--                &lt;!&ndash;/*@thymesVar id="admin" type="text"*/&ndash;&gt;-->
-<!--                <li th:if="${admin}">a href="/grades">Grades</li>-->
-<!--                <li><a href="#">Quizzes</a></li>-->
-<!--                <li><a href="#" th:text="${day}"></a></li>-->
-<!--            </ul>-->
-<!--        </nav>-->
 
-<!--        <h2>this doesn't render</h2>-->
 
 <div th:fragment="navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand" href="#">Blogging with the Chief</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,6 +53,18 @@
         </div>
     </nav>
 </div>
+
+<!--<a class="navbar-brand" href="#">Navbar</a>-->
+<!--<a class="navbar-brand" href="/posts">Home</a>-->
+<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
+<!--        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"></span>-->
+<!--    @@ -18,25 +18,10 @@-->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--        <ul class="navbar-nav mr-auto">-->
+<!--            <li class="nav-item active">-->
+<!--                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+<!--                <a cla-->
 
 
     </body>

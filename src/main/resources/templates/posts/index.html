@@ -3,10 +3,28 @@
 <head th:replace="fragments/header :: main-head('All the Posts')"></head>
 <body>
 
-<nav th:replace="fragments/navbar :: navbar"></nav>
+    <div>
+        <nav th:replace="fragments/navbar :: navbar"></nav>
+    </div>
+
+<!--    <div sec:authorize="isAuthenticated()">-->
+<!--        This content is only shown to authenticated users.-->
+
+<!--        User ID: <span th:text="${#authentication.principal.id}"/>-->
+<!--        Username: <span th:text="${#authentication.principal.username}"/>-->
+<!--        Email: <span th:text="${#authentication.principal.email}"/>-->
+<!--    </div>-->
+
+
+<!--    <div sec:authorize="isAuthenticated()">-->
+<!--        <h2>Welcome</h2>-->
+<!--        <h1 th:text="${#authentication.principal.username}"></h1>-->
+<!--    </div>-->
 
 <main class="container">
     <div class="post" th:each="post : ${posts}">
+        <h1 th:text="${post.title}"></h1>
+
         <h1 th:text="${post.title}"></h1>
         <p th:text="${post.body}
 "></p>
