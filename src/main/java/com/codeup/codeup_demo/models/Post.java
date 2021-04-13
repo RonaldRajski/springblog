@@ -30,8 +30,8 @@ public class Post {
         this.body = body;
     }
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
-//    private List<Image> images;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
+    private List<Image> images;
 
 
     public Long getId() {
@@ -67,12 +67,12 @@ public class Post {
     }
 
 
-//    public List<Image> getImages() {
-//        return images;
-//    }
-//
-//    public void setImages(List<Image> images) {
-//        this.images = images;
-//    }
+public List<Image> getImages() {
+            return images;
+ }
+
+public void setImages(List<Image> images) {
+            this.images = images;
+ }
 }
 
