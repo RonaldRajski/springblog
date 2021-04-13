@@ -1,3 +1,8 @@
 body{
     background-color: aquamarine;
 }
+
+.card-img-top{
+    width: 250px;
+    height: 250px;
+}

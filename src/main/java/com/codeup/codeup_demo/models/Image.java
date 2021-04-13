@@ -7,26 +7,28 @@ import javax.persistence.*;
 public class Image {
 
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "TEXT")
-    private String path;
+    @Column(columnDefinition = "text", nullable = false)
+    private String url;
 
     @ManyToOne
     @JoinColumn(name = "post_id")
     private Post post;
 
-    public Image(Long id, String path, Post post) {
+    public Image(Long id, String url, Post post) {
         this.id = id;
-        this.path = path;
+        this.url = url;
         this.post = post;
     }
 
     public Image() {
+    }
+
+    public Image(String url){
+        this.url = url;
     }
 
     public Long getId() {
@@ -37,19 +39,19 @@ public class Image {
         this.id = id;
     }
 
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
     public Post getPost() {
         return post;
     }
 
-    public void setAd(Post post) {
+    public void setPost(Post post) {
         this.post = post;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
